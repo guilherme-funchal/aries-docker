@@ -6,18 +6,23 @@ Criação de infraestrutura do Hyperledger Aries para o desenvolvimento
 Ter o docker e o docker composer instalados e em execução.
 
 ### 1)Criar a rede Von-network
+<pre>
 $ git clone https://github.com/bcgov/von-network
 $ cd von-network
 $ ./manage start --logs
+</pre>
 
 ### 2)Criação do servidor de tail-server para revogações
+<pre>
 $ git clone https://github.com/bcgov/indy-tails-server
 $ cd indy-tails-server
 $ ./docker/manage start
+</pre>
 
 ### 3)Ajustar o arquivo .env com as portas e credenciais utilizadas
-$ cat .env
 <pre>
+$ cat .env
+</pre><pre>
 AGENT_WALLET_SEED=seed com 32 caracteres Ex.: 000000000000000000000000000teste
 LABEL=nome da aplica
 ACAPY_ENDPOINT_PORT=8000
@@ -31,7 +36,7 @@ WALLET_KEY=senha
 </pre>
 
 ### 4)Clonar o diretório com os arquivos
-$git clone https://github.com/guilherme-funchal/aries-docker.git
+<pre>>$git clone https://github.com/guilherme-funchal/aries-docker.git</pre>
 
 ### 5)Criar um banco de dados para as wallets no Postgres ou incluir no docker compose as entradas : 
 <pre>
@@ -54,11 +59,11 @@ services:
 ### 6)Ajustar o docker-compose com as credenciais de banco e endereços dos demais serviços.
   
 ###### 7)Iniciar os conteiners
-  $cd aries-docker
+  <pre>$cd aries-docker
   $docker-compose up
+  </pre>
   
+### 8) A interface da von-network poderá ser acessada no endereço http://127.0.0.1:9000
   
-### 8) A interface da von-network poderá ser acessa com o endereço http://127.0.0.1:9000
-  
-### 9) A interface do Aries poderá ser acessada com o endereço http://127.0.0.1:8021
+### 9) A interface do Aries poderá ser acessada no endereço http://127.0.0.1:8021
   
