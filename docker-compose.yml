@@ -1,0 +1,53 @@
+version: '3'
+services:
+  acapy:
+    image: bcgovimages/aries-cloudagent:py36-1.16-1_0.7.3
+    networks:
+      - von
+    ports:
+      - "${ACAPY_ADMIN_PORT}:${ACAPY_ADMIN_PORT}"
+      - "${ACAPY_ENDPOINT_PORT}:${ACAPY_ENDPOINT_PORT}"
+    entrypoint: /bin/bash
+    command: [
+        "-c",
+        "sleep 10; \
+        aca-py start \     
+        --auto-provision \
+        -it http '0.0.0.0' ${ACAPY_ENDPOINT_PORT} \
+        -ot http \
+        --admin '0.0.0.0' ${ACAPY_ADMIN_PORT} \
+        -e ${ACAPY_ENDPOINT_URL} \
+        --webhook-url http://controller:${CONTROLLER_PORT}/webhooks \
+        --wallet-type indy \
+        --wallet-name ${WALLET_NAME} \
+        --wallet-key ${WALLET_KEY} \
+        --wallet-storage-type postgres_storage \
+        --wallet-storage-config '{\"url\":\"10.32.80.15:9906\",\"max_connections\":5}' \
+        --wallet-storage-creds '{\"account\":\"db_user\",\"password\":\"FYER9fkJ\",\"admin_account\":\"db_user\",\"admin_password\":\"FYER9fkJ\"}' \
+        --seed ${AGENT_WALLET_SEED} \
+        --genesis-url ${LEDGER_URL}/genesis \
+        --tails-server-base-url ${TAILS_SERVER_URL} \
+        --label ${LABEL} \
+        --auto-respond-credential-proposal \
+        --auto-respond-credential-request \
+        --auto-respond-presentation-proposal \
+        --auto-respond-credential-offer \
+        --auto-respond-presentation-request \
+        --auto-accept-requests \
+        --auto-store-credential \
+        --auto-verify-presentation \
+        --auto-ping-connection \
+        --auto-provision \
+        --auto-respond-messages \
+        --preserve-exchange-records \
+        --auto-accept-invites \
+        --admin-insecure-mode \
+        --multitenant \
+        --multitenant-admin \
+        --jwt-secret secret \
+        --seed '${AGENT_WALLET_SEED}' \
+        --log-level info",
+    ]
+
+networks:
+   von:
