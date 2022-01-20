@@ -59,7 +59,8 @@ services:
 ### 6)Ajustar o docker-compose com as credenciais de banco e endereços dos demais serviços.
   
 ###### 7)Iniciar os conteiners
-  <pre>$cd aries-docker
+  <pre>
+  $cd aries-docker
   $docker-compose up
   </pre>
   
