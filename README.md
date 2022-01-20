@@ -36,7 +36,7 @@ WALLET_KEY=senha
 </pre>
 
 ### 4)Clonar o diretório com os arquivos
-<pre>>$git clone https://github.com/guilherme-funchal/aries-docker.git</pre>
+<pre>$git clone https://github.com/guilherme-funchal/aries-docker.git</pre>
 
 ### 5)Criar um banco de dados para as wallets no Postgres ou incluir no docker compose as entradas : 
 <pre>
