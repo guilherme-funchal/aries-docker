@@ -17,6 +17,7 @@ $ ./docker/manage start
 
 ###### 3)Ajustar o arquivo .env com as portas e credenciais utilizadas
 $ cat .env
+<pre>
 AGENT_WALLET_SEED=seed com 32 caracteres Ex.: 000000000000000000000000000teste
 LABEL=nome da aplica
 ACAPY_ENDPOINT_PORT=8000
@@ -27,7 +28,8 @@ TAILS_SERVER_URL=http://tails-server:6543
 CONTROLLER_PORT=8080
 WALLET_NAME=nome da wallet
 WALLET_KEY=senha
-  
+</pre>
+
 ###### 4)Clonar o diretório com os arquivos
 $git clone https://github.com/guilherme-funchal/aries-docker.git
 
