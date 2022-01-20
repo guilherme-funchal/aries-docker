@@ -64,7 +64,11 @@ services:
   $docker-compose up
   </pre>
   
-### 8) A interface da von-network poderá ser acessada no endereço http://127.0.0.1:9000
+### 8) A interface da von-network poderá ser acessada no endereço 
+<pre>http://127.0.0.1:9000</pre>
   
-### 9) A interface do Aries poderá ser acessada no endereço http://127.0.0.1:8021
+### 9) A interface do Aries poderá ser acessada no endereço :
+<pre>http://127.0.0.1:8021</pre>
+
+
   
