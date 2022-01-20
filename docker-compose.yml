@@ -22,8 +22,8 @@ services:
         --wallet-name ${WALLET_NAME} \
         --wallet-key ${WALLET_KEY} \
         --wallet-storage-type postgres_storage \
-        --wallet-storage-config '{\"url\":\"10.32.80.15:9906\",\"max_connections\":5}' \
-        --wallet-storage-creds '{\"account\":\"db_user\",\"password\":\"FYER9fkJ\",\"admin_account\":\"db_user\",\"admin_password\":\"FYER9fkJ\"}' \
+        --wallet-storage-config '{\"url\":\"<endereço-ip>:<porta>\",\"max_connections\":5}' \
+        --wallet-storage-creds '{\"account\":\"db_user\",\"password\":\"password\",\"admin_account\":\"db_user\",\"admin_password\":\"password\"}' \
         --seed ${AGENT_WALLET_SEED} \
         --genesis-url ${LEDGER_URL}/genesis \
         --tails-server-base-url ${TAILS_SERVER_URL} \
